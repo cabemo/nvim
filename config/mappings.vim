@@ -9,8 +9,8 @@ nnoremap <C-l> :wincmd l<CR>
 tnoremap <C-x> <C-\><C-N>
 " GitGutter
 nnoremap <silent> <leader>z :GitGutterUndoHunk<cr>
-"nnoremap <silent> <leader>, :GitGutterNextHunk<cr>
-"nnoremap <silent> <leader>, :GitGutterPrevHunk<cr>
+nnoremap <silent> <leader>m :GitGutterNextHunk<cr>
+nnoremap <silent> <leader>M :GitGutterPrevHunk<cr>
 " FZF
 nnoremap <silent> <leader>f :FZF<cr>
 nnoremap <silent> <leader>F :FZF ~<cr>

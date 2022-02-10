@@ -10,12 +10,15 @@ source ~/.config/nvim/config/ale.vim
 source ~/.config/nvim/config/rooter.vim
 source ~/.config/nvim/config/conflict-marker.vim
 
-"GitLens
-lua vim.api.nvim_command [[autocmd CursorHold * lua require'utils'.blameVirtText()]]
-lua vim.api.nvim_command [[autocmd CursorMoved * lua require'utils'.clearBlameVirtText()]]
-lua vim.api.nvim_command [[autocmd CursorMovedI * lua require'utils'.clearBlameVirtText()]]
+"Gruvbox
+autocmd vimenter * ++nested colorscheme gruvbox
 
-hi! link GitLens Comment
+"GitLens
+"lua vim.api.nvim_command [[autocmd CursorHold * lua require'utils'.blameVirtText()]]
+"lua vim.api.nvim_command [[autocmd CursorMoved * lua require'utils'.clearBlameVirtText()]]
+"lua vim.api.nvim_command [[autocmd CursorMovedI * lua require'utils'.clearBlameVirtText()]]
+
+"hi! link GitLens Comment
 
 " Plugins will be downloaded under the specified directory.
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
@@ -30,4 +33,5 @@ call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
     Plug 'dense-analysis/ale'
     Plug 'peitalin/vim-jsx-typescript'
     Plug 'https://github.com/rhysd/conflict-marker.vim'
+    Plug 'gruvbox-community/gruvbox'
 call plug#end()

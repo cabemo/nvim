@@ -1,4 +1,7 @@
 " Autocompletion
+
+nnoremap <silent> <leader>h :call CocActionAsync('doHover')<cr>
+
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<TAB>" :
