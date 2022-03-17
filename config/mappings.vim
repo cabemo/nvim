@@ -1,12 +1,35 @@
 " Tabs
-nnoremap tk  :tabnext<CR>
-nnoremap tj  :tabprev<CR>
+nnoremap tk  :tabnext<cr>
+nnoremap tj  :tabprev<cr>
 " Windows split navigation
-nnoremap <C-k> :wincmd k<CR>
-nnoremap <C-j> :wincmd j<CR>
-nnoremap <C-h> :wincmd h<CR>
-nnoremap <C-l> :wincmd l<CR>
+nnoremap <C-k> :wincmd k<cr>
+nnoremap <C-j> :wincmd j<cr>
+nnoremap <C-h> :wincmd h<cr>
+nnoremap <C-l> :wincmd l<cr>
 tnoremap <C-x> <C-\><C-N>
+"Nvim-Tree
+nnoremap <silent><nowait> <leader>d :NvimTreeToggle<CR>
+nnoremap <silent><nowait> <leader>r :NvimTreeRefresh<CR>
+nnoremap <leader>l :NvimTreeFindFile<CR>
+
+" Utilities
+nnoremap Y y$
+nnoremap n nzzzv
+nnoremap N Nzzzv
+nnoremap J mzJ'z
+inoremap , ,<c-g>u
+inoremap . .<c-g>u
+inoremap ( (<c-g>u
+inoremap { {<c-g>u
+
+" Personal
+nnoremap <silent> <leader>e :e#<cr>
+" Coc
+nnoremap <silent> <space>h :call CocActionAsync('doHover')<cr>
+nnoremap <silent> <space>. :CocFix<cr>
+nnoremap <silent><nowait> <space>j :call CocAction('diagnosticPrevious')<cr>
+nnoremap <silent><nowait> <space>k :call CocAction('diagnosticNext')<cr>
+nnoremap <silent><nowait> <space>d :call CocAction('jumpDefinition', v:false)<cr>
 " GitGutter
 nnoremap <silent> <leader>z :GitGutterUndoHunk<cr>
 nnoremap <silent> <leader>m :GitGutterNextHunk<cr>
@@ -14,6 +37,7 @@ nnoremap <silent> <leader>M :GitGutterPrevHunk<cr>
 " FZF
 nnoremap <silent> <leader>f :FZF<cr>
 nnoremap <silent> <leader>F :FZF ~<cr>
+nnoremap <silent> <leader>/ :FZF /<cr>
 " Custom
 nnoremap <leader>o :source $MYVIMRC<cr>
 nnoremap <leader>s :split<cr>
@@ -22,6 +46,6 @@ nnoremap <leader>q :q<cr>
 nnoremap <leader>vs :vsplit<cr>
 nnoremap <leader>t :tabnew<cr>
 nnoremap <leader>x :term<cr>
-nnoremap <leader>, :ALENext<cr>
-nnoremap <leader>. :ALEPrevious<cr>
+"nnoremap <leader>, :ALENext<cr>
+"nnoremap <leader>. :ALEPrevious<cr>
 nnoremap <leader>c :qa<cr>

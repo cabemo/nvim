@@ -1,3 +1,5 @@
+-- require nvim-tree
+require'nvim-tree'.setup()
 -- in utils.lua
 local M = {}
 local api = vim.api

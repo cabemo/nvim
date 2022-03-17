@@ -9,10 +9,12 @@ source ~/.config/nvim/config/coc.vim
 source ~/.config/nvim/config/ale.vim
 source ~/.config/nvim/config/rooter.vim
 source ~/.config/nvim/config/conflict-marker.vim
+source ~/.config/nvim/config/nvim-tree-web-devicons.vim
 
 "Gruvbox
 autocmd vimenter * ++nested colorscheme gruvbox
-
+" Faster
+set updatetime=100
 "GitLens
 "lua vim.api.nvim_command [[autocmd CursorHold * lua require'utils'.blameVirtText()]]
 "lua vim.api.nvim_command [[autocmd CursorMoved * lua require'utils'.clearBlameVirtText()]]
@@ -34,4 +36,9 @@ call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
     Plug 'peitalin/vim-jsx-typescript'
     Plug 'https://github.com/rhysd/conflict-marker.vim'
     Plug 'gruvbox-community/gruvbox'
+    Plug 'kyazdani42/nvim-web-devicons'
+    Plug 'kyazdani42/nvim-tree.lua'
 call plug#end()
+
+"nvim-tree
+lua require'nvim-tree'.setup()
