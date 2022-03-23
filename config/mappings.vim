@@ -32,8 +32,8 @@ nnoremap <silent><nowait> <space>k :call CocAction('diagnosticNext')<cr>
 nnoremap <silent><nowait> <space>d :call CocAction('jumpDefinition', v:false)<cr>
 " GitGutter
 nnoremap <silent> <leader>z :GitGutterUndoHunk<cr>
-nnoremap <silent> <leader>m :GitGutterNextHunk<cr>
-nnoremap <silent> <leader>M :GitGutterPrevHunk<cr>
+nnoremap <silent> <space>g :GitGutterNextHunk<cr>
+nnoremap <silent> <space>G :GitGutterPrevHunk<cr>
 " FZF
 nnoremap <silent> <leader>f :FZF<cr>
 nnoremap <silent> <leader>F :FZF ~<cr>
