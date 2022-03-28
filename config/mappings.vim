@@ -22,9 +22,12 @@ inoremap . .<c-g>u
 inoremap ( (<c-g>u
 inoremap { {<c-g>u
 
+" Search H
+nnoremap <CR> :noh<CR><CR>
 " Personal
 nnoremap <silent> <leader>e :e#<cr>
 " Coc
+inoremap <silent><expr> <c-space> coc#refresh()
 nnoremap <silent> <space>h :call CocActionAsync('doHover')<cr>
 nnoremap <silent> <space>. :CocFix<cr>
 nnoremap <silent><nowait> <space>j :call CocAction('diagnosticPrevious')<cr>
