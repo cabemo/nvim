@@ -33,6 +33,8 @@ nnoremap <silent> <space>. :CocFix<cr>
 nnoremap <silent><nowait> <space>j :call CocAction('diagnosticPrevious')<cr>
 nnoremap <silent><nowait> <space>k :call CocAction('diagnosticNext')<cr>
 nnoremap <silent><nowait> <space>d :call CocAction('jumpDefinition', v:false)<cr>
+nnoremap <silent><nowait> <space>i :call CocAction('jumpImplementation', v:false)<cr>
+nnoremap <silent><nowait> <space>r :call CocAction('jumpReferences')<cr>
 " GitGutter
 nnoremap <silent> <leader>z :GitGutterUndoHunk<cr>
 nnoremap <silent> <space>g :GitGutterNextHunk<cr>

@@ -38,6 +38,7 @@ call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
     Plug 'gruvbox-community/gruvbox'
     Plug 'kyazdani42/nvim-web-devicons'
     Plug 'kyazdani42/nvim-tree.lua'
+    Plug 'whiteinge/diffconflicts'
 call plug#end()
 
 "nvim-tree
