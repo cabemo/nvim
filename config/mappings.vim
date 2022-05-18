@@ -47,6 +47,7 @@ nnoremap <silent> <leader>/ :FZF /<cr>
 nnoremap <leader>o :source $MYVIMRC<cr>
 nnoremap <leader>s :split<cr>
 nnoremap <leader>w :w<cr>
+nnoremap <leader>a :wa<cr>
 nnoremap <leader>q :q<cr>
 nnoremap <leader>vs :vsplit<cr>
 nnoremap <leader>t :tabnew<cr>
