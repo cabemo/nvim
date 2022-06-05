@@ -39,6 +39,7 @@ call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
     Plug 'kyazdani42/nvim-web-devicons'
     Plug 'kyazdani42/nvim-tree.lua'
     Plug 'whiteinge/diffconflicts'
+    Plug 'tpope/vim-surround'
 call plug#end()
 
 "nvim-tree
