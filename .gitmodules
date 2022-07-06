@@ -1,0 +1,45 @@
+[submodule "plugged/fzf"]
+	path = plugged/fzf
+	url = https://github.com/junegunn/fzf
+[submodule "plugged/vim-rooter"]
+  path = plugged/vim-rooter
+  url = https://github.com/airblade/vim-rooter
+[submodule "plugged/coc.nvim"]
+  path = plugged/coc.nvim
+  url = https://github.com/neoclide/coc.nvim
+[submodule "plugged/markdown-preview.nvim"]
+  path = plugged/markdown-preview.nvim
+  url = https://github.com/iamcco/markdown-preview.nvim
+[submodule "plugged/vim-graphql"]
+  path = plugged/vim-graphql
+  url = https://github.com/jparise/vim-graphql
+[submodule "plugged/vim-gitgutter"]
+  path = plugged/vim-gitgutter
+  url = https://github.com/airblade/vim-gitgutter
+[submodule "plugged/vim-visual-multi"]
+  path = plugged/vim-visual-multi
+  url = https://github.com/mg979/vim-visual-multi
+[submodule "plugged/ale"]
+  path = plugged/ale
+  url = https://github.com/dense-analysis/ale
+[submodule "plugged/vim-jsx-typescript"]
+  path = plugged/vim-jsx-typescript
+  url = https://github.com/peitalin/vim-jsx-typescript
+[submodule "plugged/conflict-marker.vim"]
+  path = plugged/conflict-marker.vim
+  url = https://github.com/rhysd/conflict-marker.vim
+[submodule "plugged/gruvbox"]
+  path = plugged/gruvbox
+  url = https://github.com/gruvbox-community/gruvbox
+[submodule "plugged/nvim-tree.lua"]
+  path = plugged/nvim-tree.lua
+  url = https://github.com/kyazdani42/nvim-tree.lua
+[submodule "plugged/nvim-web-devicons"]
+  path = plugged/nvim-web-devicons
+  url = https://github.com/kyazdani42/nvim-web-devicons
+[submodule "plugged/diffconflicts"]
+  path = plugged/diffconflicts
+  url = https://github.com/whiteinge/diffconflicts
+[submodule "plugged/vim-surround"]
+  path = plugged/vim-surround
+  url = https://github.com/tpope/vim-surround
