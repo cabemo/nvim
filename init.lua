@@ -35,9 +35,11 @@ vim.call('plug#begin', '~/.config/nvim/plugged')
   Plug 'kyazdani42/nvim-web-devicons'
   Plug 'whiteinge/diffconflicts'
   Plug 'tpope/vim-surround'
+  Plug 'feline-nvim/feline.nvim'
 vim.call('plug#end')
 
 
+require("feline").setup()
 require("nvim-web-devicons").setup({
   default = true
 })

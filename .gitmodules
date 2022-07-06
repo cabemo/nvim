@@ -1,45 +1,48 @@
 [submodule "plugged/fzf"]
 	path = plugged/fzf
-	url = https://github.com/junegunn/fzf
+	url = git@github.com/junegunn/fzf.git
 [submodule "plugged/vim-rooter"]
   path = plugged/vim-rooter
-  url = https://github.com/airblade/vim-rooter
+  url = git@github.com/airblade/vim-rooter.git
 [submodule "plugged/coc.nvim"]
   path = plugged/coc.nvim
-  url = https://github.com/neoclide/coc.nvim
+  url = git@github.com/neoclide/coc.nvim.git
 [submodule "plugged/markdown-preview.nvim"]
   path = plugged/markdown-preview.nvim
-  url = https://github.com/iamcco/markdown-preview.nvim
+  url = git@github.com/iamcco/markdown-preview.nvim.git
 [submodule "plugged/vim-graphql"]
   path = plugged/vim-graphql
-  url = https://github.com/jparise/vim-graphql
+  url = git@github.com/jparise/vim-graphql.git
 [submodule "plugged/vim-gitgutter"]
   path = plugged/vim-gitgutter
-  url = https://github.com/airblade/vim-gitgutter
+  url = git@github.com/airblade/vim-gitgutter.git
 [submodule "plugged/vim-visual-multi"]
   path = plugged/vim-visual-multi
-  url = https://github.com/mg979/vim-visual-multi
+  url = git@github.com/mg979/vim-visual-multi.git
 [submodule "plugged/ale"]
   path = plugged/ale
-  url = https://github.com/dense-analysis/ale
+  url = git@github.com/dense-analysis/ale.git
 [submodule "plugged/vim-jsx-typescript"]
   path = plugged/vim-jsx-typescript
-  url = https://github.com/peitalin/vim-jsx-typescript
+  url = git@github.com/peitalin/vim-jsx-typescript.git
 [submodule "plugged/conflict-marker.vim"]
   path = plugged/conflict-marker.vim
-  url = https://github.com/rhysd/conflict-marker.vim
+  url = git@github.com/rhysd/conflict-marker.vim.git
 [submodule "plugged/gruvbox"]
   path = plugged/gruvbox
-  url = https://github.com/gruvbox-community/gruvbox
+  url = git@github.com/gruvbox-community/gruvbox.git
 [submodule "plugged/nvim-tree.lua"]
   path = plugged/nvim-tree.lua
-  url = https://github.com/kyazdani42/nvim-tree.lua
+  url = git@github.com/kyazdani42/nvim-tree.lua.git
 [submodule "plugged/nvim-web-devicons"]
   path = plugged/nvim-web-devicons
-  url = https://github.com/kyazdani42/nvim-web-devicons
+  url = git@github.com/kyazdani42/nvim-web-devicons.git
 [submodule "plugged/diffconflicts"]
   path = plugged/diffconflicts
-  url = https://github.com/whiteinge/diffconflicts
+  url = git@github.com/whiteinge/diffconflicts.git
 [submodule "plugged/vim-surround"]
   path = plugged/vim-surround
-  url = https://github.com/tpope/vim-surround
+  url = git@github.com/tpope/vim-surround.git
+[submodule "plugged/feline.nvim"]
+	path = plugged/feline.nvim
+	url = https://github.com/feline-nvim/feline.nvim
