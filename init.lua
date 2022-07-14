@@ -36,6 +36,7 @@ vim.call('plug#begin', '~/.config/nvim/plugged')
   Plug 'whiteinge/diffconflicts'
   Plug 'tpope/vim-surround'
   Plug 'feline-nvim/feline.nvim'
+  Plug 'easymotion/vim-easymotion'
 vim.call('plug#end')
 
 

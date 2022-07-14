@@ -12,6 +12,15 @@ nnoremap <silent><nowait> <leader>d :NvimTreeToggle<CR>
 nnoremap <silent><nowait> <leader>r :NvimTreeRefresh<CR>
 nnoremap <leader>l :NvimTreeFindFile<CR>
 
+" Keep cursor centered
+nnoremap j jzz
+nnoremap k kzz
+nnoremap <c-d> <c-d>zz
+nnoremap <c-u> <c-u>zz
+nnoremap } }zz
+nnoremap { {zz
+nnoremap gg ggzz
+
 " Utilities
 nnoremap Y y$
 nnoremap n nzzzv
@@ -21,6 +30,24 @@ inoremap , ,<c-g>u
 inoremap . .<c-g>u
 inoremap ( (<c-g>u
 inoremap { {<c-g>u
+
+" EasyMotion
+let g:EasyMotion_do_mapping = 0 " Disable default mappings
+
+" Jump to anywhere you want with minimal keystrokes, with just one key binding.
+" `s{char}{label}`
+nmap s <Plug>(easymotion-overwin-f)
+" or
+" `s{char}{char}{label}`
+" Need one more keystroke, but on average, it may be more comfortable.
+nmap s <Plug>(easymotion-overwin-f2)
+
+" Turn on case-insensitive feature
+let g:EasyMotion_smartcase = 1
+
+" JK motions: Line motions
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
 
 " Search H
 nnoremap <CR> :noh<CR><CR>
