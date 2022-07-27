@@ -10,16 +10,31 @@ tnoremap <C-x> <C-\><C-N>
 "Nvim-Tree
 nnoremap <silent><nowait> <leader>d :NvimTreeToggle<CR>
 nnoremap <silent><nowait> <leader>r :NvimTreeRefresh<CR>
-nnoremap <leader>l :NvimTreeFindFile<CR>
+" nnoremap <leader>l :NvimTreeFindFile<CR>
+
+"Search for selected text
+vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
 
 " Keep cursor centered
-nnoremap j jzz
-nnoremap k kzz
-nnoremap <c-d> <c-d>zz
-nnoremap <c-u> <c-u>zz
-nnoremap } }zz
-nnoremap { {zz
-nnoremap gg ggzz
+" nnoremap j jzz
+" nnoremap k kzz
+" nnoremap <c-d> <c-d>zz
+" nnoremap <c-u> <c-u>zz
+" nnoremap } }zz
+" nnoremap { {zz
+" nnoremap gg ggzz
+
+" DAP
+nnoremap <silent> <space>dt :lua require('dap-go').debug_test()<CR>
+nnoremap <silent> <space>c :lua require('dap').continue()<CR>
+nnoremap <silent> <space>v :lua require('dap').step_over()<CR>
+nnoremap <silent> <space>i :lua require('dap').step_into()<CR>
+nnoremap <silent> <space>o :lua require('dap').step_out()<CR>
+nnoremap <silent> <leader>b :lua require('dap').toggle_breakpoint()<CR>
+nnoremap <silent> <space>dr :lua require('dap').repl.open()<CR>
+"DAPUI
+vnoremap <space>e <Cmd>lua require("dapui").eval()<CR>
+
 
 " Utilities
 nnoremap Y y$
@@ -51,8 +66,6 @@ map <Leader>k <Plug>(easymotion-k)
 
 " Search H
 nnoremap <CR> :noh<CR><CR>
-" Personal
-nnoremap <silent> <leader>e :e#<cr>
 " Coc
 inoremap <silent><expr> <c-space> coc#refresh()
 nnoremap <silent> <space>h :call CocActionAsync('doHover')<cr>
@@ -72,6 +85,9 @@ nnoremap <silent> <space>G :GitGutterPrevHunk<cr>
 nnoremap <silent> <leader>f :FZF<cr>
 nnoremap <silent> <leader>F :FZF ~<cr>
 nnoremap <silent> <leader>/ :FZF /<cr>
+nnoremap <silent> <leader>m :Maps<cr>
+nnoremap <silent> <leader>c :Commits<cr>
+vnoremap <silent> <leader>c :BCommits<cr>
 " Custom
 nnoremap <leader>o :source $MYVIMRC<cr>
 nnoremap <leader>s :split<cr>
@@ -83,4 +99,4 @@ nnoremap <leader>t :tabnew<cr>
 nnoremap <leader>x :term<cr>
 "nnoremap <leader>, :ALENext<cr>
 "nnoremap <leader>. :ALEPrevious<cr>
-nnoremap <leader>c :qa<cr>
+nnoremap <leader>e :qa<cr>
