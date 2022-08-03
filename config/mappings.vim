@@ -15,6 +15,8 @@ nnoremap <silent><nowait> <leader>r :NvimTreeRefresh<CR>
 "Search for selected text
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
 
+inoremap <expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<CR>"
+inoremap <silent><expr> <c-space> coc#refresh()
 " Keep cursor centered
 " nnoremap j jzz
 " nnoremap k kzz
@@ -28,12 +30,13 @@ vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
 nnoremap <silent> <space>dt :lua require('dap-go').debug_test()<CR>
 nnoremap <silent> <space>c :lua require('dap').continue()<CR>
 nnoremap <silent> <space>v :lua require('dap').step_over()<CR>
-nnoremap <silent> <space>i :lua require('dap').step_into()<CR>
+nnoremap <silent> <space>si :lua require('dap').step_into()<CR>
 nnoremap <silent> <space>o :lua require('dap').step_out()<CR>
 nnoremap <silent> <leader>b :lua require('dap').toggle_breakpoint()<CR>
 nnoremap <silent> <space>dr :lua require('dap').repl.open()<CR>
+nnoremap <silent> <space>du :lua require('dapui').toggle()<CR>
 "DAPUI
-vnoremap <space>e <Cmd>lua require("dapui").eval()<CR>
+vnoremap <M-k> <Cmd>lua require("dapui").eval()<CR>
 
 
 " Utilities
@@ -81,6 +84,11 @@ nnoremap <silent><nowait> <space>r :call CocAction('jumpReferences')<cr>
 nnoremap <silent> <leader>z :GitGutterUndoHunk<cr>
 nnoremap <silent> <space>g :GitGutterNextHunk<cr>
 nnoremap <silent> <space>G :GitGutterPrevHunk<cr>
+" Conflicts
+nnoremap <silent> <leader>n :ConflictMarkerNextHunk<cr>
+nnoremap <silent> <leader>N :ConflictMarkerPrevHunk<cr>
+nnoremap <silent> <leader>no :ConflictMarkerOurselves<cr>
+nnoremap <silent> <leader>nt :ConflictMarkerThemselves<cr>
 " FZF
 nnoremap <silent> <leader>f :FZF<cr>
 nnoremap <silent> <leader>F :FZF ~<cr>

@@ -84,11 +84,31 @@ require "nvim-treesitter.configs".setup({
   },
 })
 
-local dap = require("dap")
 require("dap-go").setup()
 
 -- https://github.com/go-delve/delve/blob/master/Documentation/usage/dlv_dap.md
-require("dapui").setup()
+require("dapui").setup({
+  layouts = {
+    {
+      elements = {
+      -- Elements can be strings or table with id and size keys.
+        { id = "scopes", size = 0.25 },
+        "breakpoints",
+        "stacks",
+        "watches",
+      },
+      size = 0.35, -- 40 columns
+      position = "left",
+    },
+    {
+      elements = {
+        "repl",
+      },
+      size = 0.25, -- 25% of total lines
+      position = "bottom",
+    },
+  },
+})
 require("feline").setup()
 require("nvim-web-devicons").setup({
   default = true
