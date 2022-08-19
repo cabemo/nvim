@@ -15,6 +15,7 @@ nnoremap <silent><nowait> <leader>r :NvimTreeRefresh<CR>
 "Search for selected text
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
 
+" Coc completion
 inoremap <expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<CR>"
 inoremap <silent><expr> <c-space> coc#refresh()
 " Keep cursor centered
