@@ -2,11 +2,11 @@
 nnoremap tk  :tabnext<cr>
 nnoremap tj  :tabprev<cr>
 " Windows split navigation
-nnoremap <C-k> :wincmd k<cr>
-nnoremap <C-j> :wincmd j<cr>
-nnoremap <C-h> :wincmd h<cr>
-nnoremap <C-l> :wincmd l<cr>
-tnoremap <C-x> <C-\><C-N>
+nnoremap <silent> <C-k> :wincmd k<cr>
+nnoremap <silent> <C-j> :wincmd j<cr>
+nnoremap <silent> <C-h> :wincmd h<cr>
+nnoremap <silent> <C-l> :wincmd l<cr>
+tnoremap <silent> <C-x> <C-\><C-N>
 "Nvim-Tree
 nnoremap <silent><nowait> <leader>d :NvimTreeToggle<CR>
 nnoremap <silent><nowait> <leader>r :NvimTreeRefresh<CR>
@@ -16,7 +16,7 @@ nnoremap <silent><nowait> <leader>r :NvimTreeRefresh<CR>
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
 
 " Coc completion
-inoremap <expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<CR>"
+inoremap <silent><expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<CR>"
 inoremap <silent><expr> <c-space> coc#refresh()
 " Keep cursor centered
 " nnoremap j jzz
@@ -41,35 +41,35 @@ vnoremap <M-k> <Cmd>lua require("dapui").eval()<CR>
 
 
 " Utilities
-nnoremap Y y$
-nnoremap n nzzzv
-nnoremap N Nzzzv
-nnoremap J mzJ'z
-inoremap , ,<c-g>u
-inoremap . .<c-g>u
-inoremap ( (<c-g>u
-inoremap { {<c-g>u
+nnoremap <silent> Y y$
+nnoremap <silent> n nzzzv
+nnoremap <silent> N Nzzzv
+nnoremap <silent> J mzJ'z
+inoremap <silent> , ,<c-g>u
+inoremap <silent> . .<c-g>u
+inoremap <silent> ( (<c-g>u
+inoremap <silent> { {<c-g>u
 
 " EasyMotion
 let g:EasyMotion_do_mapping = 0 " Disable default mappings
 
 " Jump to anywhere you want with minimal keystrokes, with just one key binding.
 " `s{char}{label}`
-nmap s <Plug>(easymotion-overwin-f)
+nmap <silent> s <Plug>(easymotion-overwin-f)
 " or
 " `s{char}{char}{label}`
 " Need one more keystroke, but on average, it may be more comfortable.
-nmap s <Plug>(easymotion-overwin-f2)
+nmap <silent> s <Plug>(easymotion-overwin-f2)
 
 " Turn on case-insensitive feature
 let g:EasyMotion_smartcase = 1
 
 " JK motions: Line motions
-map <Leader>j <Plug>(easymotion-j)
-map <Leader>k <Plug>(easymotion-k)
+map <silent> <Leader>j <Plug>(easymotion-j)
+map <silent> <Leader>k <Plug>(easymotion-k)
 
 " Search H
-nnoremap <CR> :noh<CR><CR>
+nnoremap <silent> <CR> :noh<CR><CR>
 " Coc
 inoremap <silent><expr> <c-space> coc#refresh()
 nnoremap <silent> <space>h :call CocActionAsync('doHover')<cr>
@@ -98,14 +98,14 @@ nnoremap <silent> <leader>m :Maps<cr>
 nnoremap <silent> <leader>c :Commits<cr>
 vnoremap <silent> <leader>c :BCommits<cr>
 " Custom
-nnoremap <leader>o :source $MYVIMRC<cr>
-nnoremap <leader>s :split<cr>
-nnoremap <leader>w :w<cr>
-nnoremap <leader>a :wa<cr>
-nnoremap <leader>q :q<cr>
-nnoremap <leader>vs :vsplit<cr>
-nnoremap <leader>t :tabnew<cr>
-nnoremap <leader>x :term<cr>
+nnoremap <silent> <leader>o :source $MYVIMRC<cr>
+nnoremap <silent> <leader>s :split<cr>
+nnoremap <silent> <leader>w :w<cr>
+nnoremap <silent> <leader>a :wa<cr>
+nnoremap <silent> <leader>q :q<cr>
+nnoremap <silent> <leader>vs :vsplit<cr>
+nnoremap <silent> <leader>t :tabnew<cr>
+nnoremap <silent> <leader>x :term<cr>
 "nnoremap <leader>, :ALENext<cr>
 "nnoremap <leader>. :ALEPrevious<cr>
-nnoremap <leader>e :qa<cr>
+nnoremap <silent> <leader>e :qa<cr>
