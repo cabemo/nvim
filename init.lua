@@ -47,6 +47,7 @@ vim.call('plug#begin', '~/.config/nvim/plugged')
   Plug 'nvim-treesitter/playground'
   Plug 'lewis6991/nvim-treesitter-context'
   Plug 'jiangmiao/auto-pairs'
+  Plug 'github/copilot.vim'
 --  Plug 'ray-x/go.nvim'
 --  Plug 'ray-x/guihua.lua''
 vim.call('plug#end')
