@@ -3,7 +3,8 @@ let g:ale_linters = {
 \ 'javascript': ['eslint'],
 \ 'python': ['flake8'],
 \ 'go': ['golint'],
-\ 'html': ['html-linter']
+\ 'html': ['html-linter'],
+\ 'sol': ['solhint']
 \ }
 
 let js_fixers = ['prettier', 'eslint']

@@ -86,10 +86,10 @@ nnoremap <silent> <leader>z :GitGutterUndoHunk<cr>
 nnoremap <silent> <space>g :GitGutterNextHunk<cr>
 nnoremap <silent> <space>G :GitGutterPrevHunk<cr>
 " Conflicts
-nnoremap <silent> <leader>n :ConflictMarkerNextHunk<cr>
-nnoremap <silent> <leader>N :ConflictMarkerPrevHunk<cr>
-nnoremap <silent> <leader>no :ConflictMarkerOurselves<cr>
-nnoremap <silent> <leader>nt :ConflictMarkerThemselves<cr>
+nnoremap <silent> <leader>n :ConflictMarkerNextHunk<cr>zz
+nnoremap <silent> <leader>N :ConflictMarkerPrevHunk<cr>zz
+nnoremap <silent> <leader>co :ConflictMarkerOurselves<cr>
+nnoremap <silent> <leader>ct :ConflictMarkerThemselves<cr>
 " FZF
 nnoremap <silent> <leader>f :FZF<cr>
 nnoremap <silent> <leader>F :FZF ~<cr>
