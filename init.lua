@@ -1,11 +1,12 @@
 -- Import configurations
 -- Main configurations
 vim.cmd([[
+  source ~/.config/nvim/config/coc.vim
+  source ~/.config/nvim/config/ale.vim
   source ~/.config/nvim/config/variables.vim
   source ~/.config/nvim/config/mappings.vim
   source ~/.config/nvim/config/fzf.vim
-  source ~/.config/nvim/config/coc.vim
-  source ~/.config/nvim/config/ale.vim
+"  source ~/.config/nvim/config/langclient.vim
   source ~/.config/nvim/config/rooter.vim
   source ~/.config/nvim/config/conflict-marker.vim
 
@@ -23,12 +24,13 @@ vim.call('plug#begin', '~/.config/nvim/plugged')
   Plug 'junegunn/fzf.vim'
   Plug 'airblade/vim-rooter'
   Plug('neoclide/coc.nvim', {branch = 'release'})
-  Plug('iamcco/markdown-preview.nvim', { run = 'cd app && yarn install'  })
-  Plug 'jparise/vim-graphql'
+--  Plug('autozimu/LanguageClient-neovim', { branch = 'next', run = 'bash install.sh' })
+--  Plug('iamcco/markdown-preview.nvim', { run = 'cd app && yarn install'  })
+--  Plug 'jparise/vim-graphql'
   Plug 'airblade/vim-gitgutter'
-  Plug('mg979/vim-visual-multi', {branch = 'master'})
-  Plug 'dense-analysis/ale'
-  Plug 'peitalin/vim-jsx-typescript'
+--  Plug('mg979/vim-visual-multi', {branch = 'master'})
+--  Plug 'dense-analysis/ale'
+--  Plug 'peitalin/vim-jsx-typescript'
   Plug 'https://github.com/rhysd/conflict-marker.vim'
   Plug 'gruvbox-community/gruvbox'
   Plug 'kyazdani42/nvim-tree.lua'
@@ -37,7 +39,7 @@ vim.call('plug#begin', '~/.config/nvim/plugged')
   Plug 'tpope/vim-surround'
   Plug 'feline-nvim/feline.nvim'
   Plug 'easymotion/vim-easymotion'
-  Plug 'jupyter-vim/jupyter-vim'
+--  Plug 'jupyter-vim/jupyter-vim'
   Plug('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate'})
   Plug 'mfussenegger/nvim-dap'
   Plug 'leoluz/nvim-dap-go'
@@ -48,10 +50,10 @@ vim.call('plug#begin', '~/.config/nvim/plugged')
   Plug 'lewis6991/nvim-treesitter-context'
   Plug 'jiangmiao/auto-pairs'
   Plug 'github/copilot.vim'
---  Plug 'ray-x/go.nvim'
---  Plug 'ray-x/guihua.lua''
+  Plug 'norcalli/nvim-colorizer.lua'
 vim.call('plug#end')
 
+require('colorizer').setup()
 
 require "nvim-treesitter.configs".setup({
   ensure_installed = { "go", "lua" },

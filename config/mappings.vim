@@ -1,3 +1,6 @@
+" Copy selection to replace
+vnoremap <C-r> "hy:%s/<C-r>h
+
 " Tabs
 nnoremap tk  :tabnext<cr>
 nnoremap tj  :tabprev<cr>
@@ -10,14 +13,11 @@ tnoremap <silent> <C-x> <C-\><C-N>
 "Nvim-Tree
 nnoremap <silent><nowait> <leader>d :NvimTreeToggle<CR>
 nnoremap <silent><nowait> <leader>r :NvimTreeRefresh<CR>
+nnoremap <silent><nowait> <space>f :NvimTreeFindFile<CR>
 " nnoremap <leader>l :NvimTreeFindFile<CR>
 
 "Search for selected text
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
-
-" Coc completion
-inoremap <silent><expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<CR>"
-inoremap <silent><expr> <c-space> coc#refresh()
 " Keep cursor centered
 " nnoremap j jzz
 " nnoremap k kzz
@@ -70,26 +70,15 @@ map <silent> <Leader>k <Plug>(easymotion-k)
 
 " Search H
 nnoremap <silent> <CR> :noh<CR><CR>
-" Coc
-inoremap <silent><expr> <c-space> coc#refresh()
-nnoremap <silent> <space>h :call CocActionAsync('doHover')<cr>
-nnoremap <silent> <space>. :CocFix<cr>
-nnoremap <silent><nowait> <space>j :call CocAction('diagnosticPrevious')<cr>
-nnoremap <silent><nowait> <space>k :call CocAction('diagnosticNext')<cr>
-nnoremap <silent><nowait> <space>di :call CocAction('jumpDefinition', v:false)<cr>
-nnoremap <silent><nowait> <space>d :call CocAction('jumpDefinition', 'split')<cr>
-nnoremap <silent><nowait> <space>de :call CocAction('jumpDefinition', 'edit')<cr>
-nnoremap <silent><nowait> <space>i :call CocAction('jumpImplementation', v:false)<cr>
-nnoremap <silent><nowait> <space>r :call CocAction('jumpReferences')<cr>
 " GitGutter
 nnoremap <silent> <leader>z :GitGutterUndoHunk<cr>
 nnoremap <silent> <space>g :GitGutterNextHunk<cr>
 nnoremap <silent> <space>G :GitGutterPrevHunk<cr>
 " Conflicts
-nnoremap <silent> <leader>n :ConflictMarkerNextHunk<cr>zz
-nnoremap <silent> <leader>N :ConflictMarkerPrevHunk<cr>zz
-nnoremap <silent> <leader>co :ConflictMarkerOurselves<cr>
-nnoremap <silent> <leader>ct :ConflictMarkerThemselves<cr>
+nnoremap <silent> <space>n :ConflictMarkerNextHunk<cr>zz
+nnoremap <silent> <space>N :ConflictMarkerPrevHunk<cr>zz
+nnoremap <silent> <space>co :ConflictMarkerOurselves<cr>
+nnoremap <silent> <space>ct :ConflictMarkerThemselves<cr>
 " FZF
 nnoremap <silent> <leader>f :FZF<cr>
 nnoremap <silent> <leader>F :FZF ~<cr>
