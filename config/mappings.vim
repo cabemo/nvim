@@ -1,6 +1,9 @@
 " Copy selection to replace
 vnoremap <C-r> "hy:%s/<C-r>h
 
+" tagbar
+nmap <F8> :TagbarToggle<CR>
+
 " Tabs
 nnoremap tk  :tabnext<cr>
 nnoremap tj  :tabprev<cr>
