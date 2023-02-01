@@ -2,9 +2,6 @@
 set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
 set grepformat=%f:%l:%c:%m
 
-" Folding
-set foldcolumn=2
-
 "Vim Diff
 highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
 highlight DiffDelete cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
@@ -58,3 +55,10 @@ set nowrap
 
 highlight Cursor guifg=white guibg=black
 highlight iCursor guifg=white guibg=steelblue
+
+" Folding
+set foldcolumn=2
+set foldlevel=99
+set foldmethod=syntax
+syntax enable
+highlight Folded     cterm=bold ctermfg=10 ctermbg=17 guibg=Gray guifg=White

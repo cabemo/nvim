@@ -1,5 +1,7 @@
 " disable the default highlight group
 " let g:conflict_marker_highlight_group = ''
+let g:conflict_marker_enable_highlight = 1 
+
 
 " Include text after begin and end markers
 let g:conflict_marker_begin = '^<<<<<<< .*$'

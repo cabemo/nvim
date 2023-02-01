@@ -82,6 +82,7 @@ nnoremap <silent> <space>n :ConflictMarkerNextHunk<cr>zz
 nnoremap <silent> <space>N :ConflictMarkerPrevHunk<cr>zz
 nnoremap <silent> <space>co :ConflictMarkerOurselves<cr>
 nnoremap <silent> <space>ct :ConflictMarkerThemselves<cr>
+nnoremap <silent> <space>cb :ConflictMarkerBoth<cr>
 " FZF
 nnoremap <silent> <leader>f :FZF<cr>
 nnoremap <silent> <leader>F :FZF ~<cr>
