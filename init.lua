@@ -10,7 +10,7 @@ vim.cmd([[
   source ~/.config/nvim/config/conflict-marker.vim
 
   " Gruvbox
-  autocmd vimenter * ++nested colorscheme gruvbox
+  " autocmd vimenter * ++nested colorscheme gruvbox
   " Faster
   set updatetime=100
   set termguicolors " this variable must be enabled for colors to be applied properly
@@ -25,7 +25,7 @@ vim.call('plug#begin', '~/.config/nvim/plugged')
   Plug('neoclide/coc.nvim', {branch = 'release'})
   Plug 'airblade/vim-gitgutter'
   Plug 'https://github.com/rhysd/conflict-marker.vim'
-  Plug 'gruvbox-community/gruvbox'
+  -- Plug 'gruvbox-community/gruvbox'
   Plug 'kyazdani42/nvim-tree.lua'
   Plug 'kyazdani42/nvim-web-devicons'
   Plug 'tpope/vim-surround'
@@ -36,8 +36,30 @@ vim.call('plug#begin', '~/.config/nvim/plugged')
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
   Plug 'preservim/tagbar'
---  Plug 'luisdavim/pretty-folds'
+  Plug 'Soares/base16.nvim'
+  Plug 'xiyaowong/nvim-transparent'
 vim.call('plug#end')
+
+vim.cmd([[
+  colorscheme twilight
+  let g:airline_theme='base16'
+]])
+
+require("transparent").setup({
+  enable = true, -- boolean: enable transparent
+  extra_groups = { -- table/string: additional groups that should be cleared
+    -- In particular, when you set it to 'all', that means all available groups
+
+    -- example of akinsho/nvim-bufferline.lua
+    "BufferLineTabClose",
+    "BufferlineBufferSelected",
+    "BufferLineFill",
+    "BufferLineBackground",
+    "BufferLineSeparator",
+    "BufferLineIndicatorSelected",
+  },
+  exclude = {}, -- table: groups you don't want to clear
+})
 
 require('colorizer').setup()
 
