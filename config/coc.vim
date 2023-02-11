@@ -2,6 +2,7 @@
 
 nnoremap <silent> <leader>h :call CocActionAsync('doHover')<cr>
 nmap <silent> <leader>, :call CocAction('format')<cr>:w<cr>
+nnoremap <silent> <F2> :call CocActionAsync('rename')<cr>
 " Coc
 inoremap <silent><expr> <c-space> coc#refresh()
 nnoremap <silent> <space>h :call CocActionAsync('doHover')<cr>

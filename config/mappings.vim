@@ -1,3 +1,19 @@
+" Diff
+" Use Alt + h for :diffget
+map <silent> <A-j> ]czz
+map <silent> <A-k> [czz
+nnoremap <silent> <A-h> :diffget LO<cr>
+nnoremap <silent> <A-l> :diffget RE<cr>
+if &diff
+  nnoremap k kzz
+  nnoremap j jzz
+  highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
+  highlight DiffDelete cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
+  highlight DiffChange cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
+  highlight DiffText   cterm=bold ctermfg=10 ctermbg=88 gui=none guifg=bg guibg=Red
+  nnoremap <silent> <leader>w :wqa<cr>
+endif
+
 " Copy selection to replace
 vnoremap <C-r> "hy:%s/<C-r>h
 

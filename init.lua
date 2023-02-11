@@ -38,12 +38,15 @@ vim.call('plug#begin', '~/.config/nvim/plugged')
   Plug 'preservim/tagbar'
   Plug 'Soares/base16.nvim'
   Plug 'xiyaowong/nvim-transparent'
+  Plug 'AckslD/nvim-neoclip.lua'
 vim.call('plug#end')
 
 vim.cmd([[
   colorscheme twilight
   let g:airline_theme='base16'
 ]])
+
+require('neoclip').setup()
 
 require("transparent").setup({
   enable = true, -- boolean: enable transparent
