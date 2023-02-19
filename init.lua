@@ -8,6 +8,7 @@ vim.cmd([[
   source ~/.config/nvim/config/fzf.vim
   source ~/.config/nvim/config/rooter.vim
   source ~/.config/nvim/config/conflict-marker.vim
+  source ~/.config/nvim/config/suda.vim
 
   " Gruvbox
   " autocmd vimenter * ++nested colorscheme gruvbox
@@ -39,6 +40,7 @@ vim.call('plug#begin', '~/.config/nvim/plugged')
   Plug 'Soares/base16.nvim'
   Plug 'xiyaowong/nvim-transparent'
   Plug 'AckslD/nvim-neoclip.lua'
+  Plug 'lambdalisue/suda.vim'
 vim.call('plug#end')
 
 vim.cmd([[
