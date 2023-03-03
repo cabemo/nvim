@@ -14,6 +14,9 @@ if &diff
   nnoremap <silent> <leader>w :wqa<cr>
 endif
 
+" Context.vim
+nnoremap <silent> <leader>m :ContextToggleWindow<cr>
+
 " Copy selection to replace
 vnoremap <C-r> "hy:%s/<C-r>h
 
@@ -103,7 +106,7 @@ nnoremap <silent> <space>cb :ConflictMarkerBoth<cr>
 nnoremap <silent> <leader>f :FZF<cr>
 nnoremap <silent> <leader>F :FZF ~<cr>
 nnoremap <silent> <leader>/ :FZF /<cr>
-nnoremap <silent> <leader>m :Maps<cr>
+nnoremap <silent> <leader>M :Maps<cr>
 nnoremap <silent> <leader>c :Commits<cr>
 vnoremap <silent> <leader>c :BCommits<cr>
 " Custom

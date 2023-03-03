@@ -41,11 +41,14 @@ vim.call('plug#begin', '~/.config/nvim/plugged')
   Plug 'xiyaowong/nvim-transparent'
   Plug 'AckslD/nvim-neoclip.lua'
   Plug 'lambdalisue/suda.vim'
+  Plug 'wellle/context.vim'
 vim.call('plug#end')
 
 vim.cmd([[
-  colorscheme twilight
+  colorscheme ashes
+  highlight Folded     cterm=bold ctermfg=10 ctermbg=17 guibg=Gray guifg=White
   let g:airline_theme='base16'
+  let g:context_enabled = 0
 ]])
 
 require('neoclip').setup()
