@@ -18,3 +18,7 @@ nnoremap <silent><nowait> <space>i :call CocAction('jumpImplementation', v:false
 nnoremap <silent><nowait> <space>r :call CocAction('jumpReferences')<cr>
 inoremap <silent><expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<CR>"
 inoremap <silent><expr> <c-space> coc#refresh()
+
+" Config for coc-sh
+" Enable bashIde.explainshellEndpoint
+ let g:sh_explainshell_endpoint = 'https://explainshell.com/explain'

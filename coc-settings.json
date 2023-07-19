@@ -1,3 +1,4 @@
 {
-  "coc.preferences.formatOnSave": false
+  "coc.preferences.formatOnSave": false,
+  "sh.explainshellEndpoint": "https://api.explainshell.com/explain",
 }

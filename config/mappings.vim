@@ -33,9 +33,9 @@ nnoremap <silent> <C-h> :wincmd h<cr>
 nnoremap <silent> <C-l> :wincmd l<cr>
 tnoremap <silent> <C-x> <C-\><C-N>
 "Nvim-Tree
-nnoremap <silent><nowait> <leader>d :NvimTreeToggle<CR>
-nnoremap <silent><nowait> <leader>r :NvimTreeRefresh<CR>
-nnoremap <silent><nowait> <space>f :NvimTreeFindFile<CR>
+nnoremap <silent><nowait> <leader>d :lua MiniFiles.open()<CR>
+nnoremap <silent><nowait> <leader>r :lua MiniFiles.refresh()<CR>
+nnoremap <silent><nowait> <space>f :lua MiniFiles.open(vim.api.nvim_buf_get_name(0))<CR>
 " nnoremap <leader>l :NvimTreeFindFile<CR>
 
 "Search for selected text
@@ -121,3 +121,9 @@ nnoremap <silent> <leader>x :term<cr>
 "nnoremap <leader>, :ALENext<cr>
 "nnoremap <leader>. :ALEPrevious<cr>
 nnoremap <silent> <leader>e :qa<cr>
+
+" LeetCode
+nnoremap <leader>ll :LeetCodeList<cr>
+nnoremap <leader>lt :LeetCodeTest<cr>
+nnoremap <leader>ls :LeetCodeSubmit<cr>
+nnoremap <leader>li :LeetCodeSignIn<cr>
