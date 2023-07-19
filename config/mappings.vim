@@ -14,6 +14,12 @@ if &diff
   nnoremap <silent> <leader>w :wqa<cr>
 endif
 
+" Copy to clipboard
+nnoremap <silent> <space>y "+y
+vnoremap <silent> <space>y "+y
+nnoremap <silent> <space>p "+p
+vnoremap <silent> <space>p "+p
+
 " Context.vim
 nnoremap <silent> <leader>m :ContextToggleWindow<cr>
 
