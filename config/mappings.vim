@@ -1,3 +1,13 @@
+nmap <S-CR> Shift+o<Esc>
+nmap <CR> o<Esc>
+vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
+" H to move to first character of line
+noremap H ^
+nnoremap <silent> <leader>= :exe "resize " . (winheight(0) * 3/2)<CR>
+nnoremap <silent> <leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
+" L to move to last character of line
+noremap L g_
+
 " Diff
 " Use Alt + h for :diffget
 map <silent> <A-j> ]czz
