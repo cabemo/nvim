@@ -2,7 +2,13 @@
 set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
 set grepformat=%f:%l:%c:%m
 
-highlight Folded     cterm=bold ctermfg=10 ctermbg=17 guibg=Gray guifg=White
+" Terminal configs
+set scbk=100000
+
+" Maintain cursor centered
+set so=999
+set nowrap sidescroll=5 listchars=extends:>,precedes:<
+set sidescrolloff=5
 
 "Vim Diff
 if &diff
@@ -40,4 +46,3 @@ set foldcolumn=2
 set foldlevel=99
 set foldmethod=syntax
 syntax enable
-highlight Folded     cterm=bold ctermfg=10 ctermbg=17 guibg=Gray guifg=White

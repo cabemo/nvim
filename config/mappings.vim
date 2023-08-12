@@ -8,6 +8,10 @@ nnoremap <silent> <leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
 " L to move to last character of line
 noremap L g_
 
+" Bufferline
+nnoremap <silent> gD :BufferLinePickClose<CR>
+nnoremap <silent> gb :BufferLinePick<CR>
+
 " Diff
 " Use Alt + h for :diffget
 map <silent> <A-j> ]czz
@@ -43,39 +47,47 @@ nmap <F8> :TagbarToggle<CR>
 nnoremap tk  :tabnext<cr>
 nnoremap tj  :tabprev<cr>
 " Windows split navigation
-nnoremap <silent> <C-k> :wincmd k<cr>
-nnoremap <silent> <C-j> :wincmd j<cr>
-nnoremap <silent> <C-h> :wincmd h<cr>
-nnoremap <silent> <C-l> :wincmd l<cr>
+" nnoremap <silent> <C-k> :wincmd k<cr>
+" nnoremap <silent> <C-j> :wincmd j<cr>
+" nnoremap <silent> <C-h> :wincmd h<cr>
+" nnoremap <silent> <C-l> :wincmd l<cr>
+" tnoremap <Esc> <C-\><C-n>
+" Override Esc mapping for fzf
+autocmd FileType fzf tnoremap <buffer> <Esc> <C-c>
 tnoremap <silent> <C-x> <C-\><C-N>
+tnoremap <A-h> <C-\><C-N><C-w>h
+tnoremap <A-j> <C-\><C-N><C-w>j
+tnoremap <A-k> <C-\><C-N><C-w>k
+tnoremap <A-l> <C-\><C-N><C-w>l
+inoremap <A-h> <C-\><C-N><C-w>h
+inoremap <A-j> <C-\><C-N><C-w>j
+inoremap <A-k> <C-\><C-N><C-w>k
+inoremap <A-l> <C-\><C-N><C-w>l
+nnoremap <A-h> <C-w>h
+nnoremap <A-j> <C-w>j
+nnoremap <A-k> <C-w>k
+nnoremap <A-l> <C-w>l
 "Nvim-Tree
 nnoremap <silent><nowait> <leader>d :lua MiniFiles.open()<CR>
 nnoremap <silent><nowait> <leader>r :lua MiniFiles.refresh()<CR>
+nnoremap <silent><nowait> <Esc> :lua MiniFiles.close()<CR>
 nnoremap <silent><nowait> <space>f :lua MiniFiles.open(vim.api.nvim_buf_get_name(0))<CR>
 " nnoremap <leader>l :NvimTreeFindFile<CR>
 
 "Search for selected text
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
-" Keep cursor centered
-" nnoremap j jzz
-" nnoremap k kzz
-" nnoremap <c-d> <c-d>zz
-" nnoremap <c-u> <c-u>zz
-" nnoremap } }zz
-" nnoremap { {zz
-" nnoremap gg ggzz
 
 " DAP
-nnoremap <silent> <space>dt :lua require('dap-go').debug_test()<CR>
-nnoremap <silent> <space>c :lua require('dap').continue()<CR>
-nnoremap <silent> <space>v :lua require('dap').step_over()<CR>
-nnoremap <silent> <space>si :lua require('dap').step_into()<CR>
-nnoremap <silent> <space>o :lua require('dap').step_out()<CR>
-nnoremap <silent> <leader>b :lua require('dap').toggle_breakpoint()<CR>
-nnoremap <silent> <space>dr :lua require('dap').repl.open()<CR>
-nnoremap <silent> <space>du :lua require('dapui').toggle()<CR>
+" nnoremap <silent> <space>dt :lua require('dap-go').debug_test()<CR>
+" nnoremap <silent> <space>c :lua require('dap').continue()<CR>
+" nnoremap <silent> <space>v :lua require('dap').step_over()<CR>
+" nnoremap <silent> <space>si :lua require('dap').step_into()<CR>
+" nnoremap <silent> <space>o :lua require('dap').step_out()<CR>
+" nnoremap <silent> <leader>b :lua require('dap').toggle_breakpoint()<CR>
+" nnoremap <silent> <space>dr :lua require('dap').repl.open()<CR>
+" nnoremap <silent> <space>du :lua require('dapui').toggle()<CR>
 "DAPUI
-vnoremap <M-k> <Cmd>lua require("dapui").eval()<CR>
+" vnoremap <M-k> <Cmd>lua require("dapui").eval()<CR>
 
 
 " Utilities
@@ -119,12 +131,19 @@ nnoremap <silent> <space>co :ConflictMarkerOurselves<cr>
 nnoremap <silent> <space>ct :ConflictMarkerThemselves<cr>
 nnoremap <silent> <space>cb :ConflictMarkerBoth<cr>
 " FZF
-nnoremap <silent> <leader>f :FZF<cr>
-nnoremap <silent> <leader>F :FZF ~<cr>
+nnoremap <silent> <leader>, :FZF<cr>
+nnoremap <silent> <leader>< :FZF ~<cr>
 nnoremap <silent> <leader>/ :FZF /<cr>
 nnoremap <silent> <leader>M :Maps<cr>
 nnoremap <silent> <leader>c :Commits<cr>
 vnoremap <silent> <leader>c :BCommits<cr>
+nnoremap <silent> <leader>o :BTags<CR>
+nnoremap <silent> <leader>O :Tags<CR>
+nnoremap <silent> // :BLines<cr>
+nnoremap <sllent> <leader>h :History<cr>
+nnoremap <silent> <leader>a :Buffers<CR>
+nnoremap <silent> <leader>A :Windows<CR>
+noremap <silent> <leader>ft :Filetypes<CR>
 " Custom
 nnoremap <silent> <leader>o :source $MYVIMRC<cr>
 nnoremap <silent> <leader>s :split<cr>
