@@ -145,7 +145,7 @@ nnoremap <silent> <leader>a :Buffers<CR>
 nnoremap <silent> <leader>A :Windows<CR>
 noremap <silent> <leader>ft :Filetypes<CR>
 " Custom
-nnoremap <silent> <leader>o :source $MYVIMRC<cr>
+" nnoremap <silent> <leader>o :source $MYVIMRC<cr>
 nnoremap <silent> <leader>s :split<cr>
 nnoremap <silent> <leader>w :w<cr>
 nnoremap <silent> <leader>a :wa<cr>

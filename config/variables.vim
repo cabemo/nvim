@@ -6,7 +6,7 @@ set grepformat=%f:%l:%c:%m
 set scbk=100000
 
 " Maintain cursor centered
-set so=999
+set so=5
 set nowrap sidescroll=5 listchars=extends:>,precedes:<
 set sidescrolloff=5
 

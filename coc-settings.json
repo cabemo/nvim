@@ -1,6 +1,6 @@
 {
   "coc.preferences.formatOnSave": true,
-  "coc.preferences.formatOnType": true,
+  "coc.preferences.formatOnType": false,
   "languageserver": {
     "lua": {
       "command": "/usr/bin/lua-language-server",
