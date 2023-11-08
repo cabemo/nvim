@@ -29,21 +29,27 @@ Plug 'airblade/vim-rooter'
 Plug('neoclide/coc.nvim', { branch = 'release' })
 Plug 'airblade/vim-gitgutter'
 Plug 'https://github.com/rhysd/conflict-marker.vim'
+Plug 'gruvbox-community/gruvbox'
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'nvim-tree/nvim-web-devicons'
 Plug 'tpope/vim-surround'
 Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-fugitive'
+Plug 'github/copilot.vim'
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'preservim/tagbar'
 Plug 'Soares/base16.nvim'
+Plug 'xiyaowong/nvim-transparent'
+Plug 'AckslD/nvim-neoclip.lua'
 Plug 'lambdalisue/suda.vim'
 Plug 'wellle/context.vim'
+Plug 'chrisbra/csv.vim'
+Plug('ojroques/vim-oscyank', { branch = 'main' })
+Plug 'rust-lang/rust.vim'
 Plug 'echasnovski/mini.nvim'
-Plug('akinsho/bufferline.nvim', { tag = '*' })
 Plug('dccsillag/magma-nvim', { run = ':UpdateRemotePlugins' })
 vim.call('plug#end')
 
@@ -58,7 +64,20 @@ vim.cmd([[
 	let g:context_enabled = 0
 ]])
 
+require('neoclip').setup()
+
 require('mini.files').setup()
+
+require("transparent").setup({
+  groups = { -- table: default groups
+    'Normal', 'NormalNC', 'Comment', 'Constant', 'Special', 'Identifier',
+    'Statement', 'PreProc', 'Type', 'Underlined', 'Todo', 'String', 'Function',
+    'Conditional', 'Repeat', 'Operator', 'Structure', 'LineNr', 'NonText',
+    'SignColumn', 'CursorLineNr', 'EndOfBuffer',
+  },
+  extra_groups = {},   -- table: additional groups that should be cleared
+  exclude_groups = {}, -- table: groups you don't want to clear
+})
 
 require('colorizer').setup()
 
