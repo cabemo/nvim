@@ -52,6 +52,7 @@ Plug 'rust-lang/rust.vim'
 Plug 'ianding1/leetcode.vim'
 Plug 'echasnovski/mini.nvim'
 Plug('akinsho/bufferline.nvim', { tag = '*' })
+Plug('dccsillag/magma-nvim', { run = ':UpdateRemotePlugins' })
 vim.call('plug#end')
 
 vim.cmd([[
