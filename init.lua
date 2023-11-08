@@ -26,24 +26,16 @@ vim.call('plug#begin', '~/.config/nvim/plugged')
 Plug('junegunn/fzf', { run = ':call fzf#install()' })
 Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-rooter'
-Plug('neoclide/coc.nvim', { branch = 'release' })
 Plug 'airblade/vim-gitgutter'
 Plug 'https://github.com/rhysd/conflict-marker.vim'
-Plug 'kyazdani42/nvim-tree.lua'
-Plug 'kyazdani42/nvim-web-devicons'
-Plug 'nvim-tree/nvim-web-devicons'
 Plug 'tpope/vim-surround'
 Plug 'easymotion/vim-easymotion'
-Plug 'tpope/vim-fugitive'
-Plug 'norcalli/nvim-colorizer.lua'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'preservim/tagbar'
 Plug 'Soares/base16.nvim'
 Plug 'lambdalisue/suda.vim'
 Plug 'wellle/context.vim'
 Plug 'echasnovski/mini.nvim'
-Plug('akinsho/bufferline.nvim', { tag = '*' })
 vim.call('plug#end')
 
 vim.cmd([[
@@ -60,7 +52,3 @@ vim.cmd([[
 require('mini.files').setup()
 
 require('colorizer').setup()
-
-require("nvim-web-devicons").setup({
-  default = true
-})
