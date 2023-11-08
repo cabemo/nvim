@@ -51,4 +51,3 @@ vim.cmd([[
 
 require('mini.files').setup()
 
-require('colorizer').setup()
