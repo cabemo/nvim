@@ -68,12 +68,6 @@ nnoremap <A-j> <C-w>j
 nnoremap <A-k> <C-w>k
 nnoremap <A-l> <C-w>l
 "Nvim-Tree
-nnoremap <silent><nowait> <leader>d :lua MiniFiles.open()<CR>
-nnoremap <silent><nowait> <leader>r :lua MiniFiles.refresh()<CR>
-nnoremap <silent><nowait> <Esc> :lua MiniFiles.close()<CR>
-nnoremap <silent><nowait> <space>f :lua MiniFiles.open(vim.api.nvim_buf_get_name(0))<CR>
-" nnoremap <leader>l :NvimTreeFindFile<CR>
-
 "Search for selected text
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
 
