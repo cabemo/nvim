@@ -39,15 +39,14 @@ Plug 'echasnovski/mini.nvim'
 vim.call('plug#end')
 
 vim.cmd([[
-	colorscheme habamax " quiet royal peachpuff
+	colorscheme ashes " quiet royal peachpuff
   highlight Folded          cterm=bold ctermfg=10 ctermbg=17 guibg=Gray guifg=White
   highlight Folded          cterm=bold ctermfg=10 ctermbg=17 guibg=Gray guifg=White
-  highlight MiniFilesNormal guibg=#555555
 	highlight LineNr          guifg=#CCCCCC
   highlight Folded     cterm=bold ctermfg=10 ctermbg=17 guibg=Gray guifg=White
 	let g:airline_theme='base16'
 	let g:context_enabled = 0
 ]])
 
-require('mini.files').setup()
+-- require('mini.files').setup()
 
