@@ -1,10 +1,18 @@
 {
-  "coc.preferences.formatOnSave": false,
+  "coc.preferences.formatOnSave": true,
   "coc.preferences.formatOnType": false,
+  "python.linting.enabled": true,
+  "python.formatting.autopep8Args": [
+    "--max-line-length",
+    "140",
+    "--experimental"
+  ],
   "languageserver": {
     "lua": {
       "command": "/usr/bin/lua-language-server",
-      "filetypes": ["lua"],
+      "filetypes": [
+        "lua"
+      ],
       "settings": {
         "Lua": {
           "workspace.library": {
@@ -13,7 +21,9 @@
             "/usr/share/nvim/runtime/lua/vim/lsp": true
           },
           "diagnostics": {
-            "globals": ["vim"]
+            "globals": [
+              "vim"
+            ]
           }
         }
       }
