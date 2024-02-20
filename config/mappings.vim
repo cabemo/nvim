@@ -16,17 +16,6 @@ nnoremap <silent> gb :BufferLinePick<CR>
 " Use Alt + h for :diffget
 map <silent> <A-j> ]czz
 map <silent> <A-k> [czz
-nnoremap <silent> <A-h> :diffget LO<cr>
-nnoremap <silent> <A-l> :diffget RE<cr>
-if &diff
-  nnoremap k kzz
-  nnoremap j jzz
-  highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
-  highlight DiffDelete cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
-  highlight DiffChange cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
-  highlight DiffText   cterm=bold ctermfg=10 ctermbg=88 gui=none guifg=bg guibg=Red
-  nnoremap <silent> <leader>w :wqa<cr>
-endif
 
 " Copy to clipboard
 nnoremap <silent> <space>y "+y
@@ -73,6 +62,18 @@ nnoremap <silent><nowait> <leader>r :lua MiniFiles.refresh()<CR>
 nnoremap <silent><nowait> <Esc> :lua MiniFiles.close()<CR>
 nnoremap <silent><nowait> <space>f :lua MiniFiles.open(vim.api.nvim_buf_get_name(0))<CR>
 " nnoremap <leader>l :NvimTreeFindFile<CR>
+
+if &diff
+  nnoremap <silent> <A-h> :diffget LO<cr>
+  nnoremap <silent> <A-l> :diffget RE<cr>
+  nnoremap k kzz
+  nnoremap j jzz
+  highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
+  highlight DiffDelete cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
+  highlight DiffChange cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
+  highlight DiffText   cterm=bold ctermfg=10 ctermbg=88 gui=none guifg=bg guibg=Red
+  nnoremap <silent> <leader>w :wqa<cr>
+endif
 
 "Search for selected text
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
@@ -135,7 +136,7 @@ nnoremap <silent> <leader>, :FZF<cr>
 nnoremap <silent> <leader>< :FZF ~<cr>
 nnoremap <silent> <leader>/ :FZF /<cr>
 nnoremap <silent> <leader>M :Maps<cr>
-nnoremap <silent> <leader>c :Commits<cr>
+" nnoremap <silent> <leader>c :Commits<cr>
 vnoremap <silent> <leader>c :BCommits<cr>
 nnoremap <silent> <leader>o :BTags<CR>
 nnoremap <silent> <leader>O :Tags<CR>
@@ -170,5 +171,14 @@ xnoremap <silent>       <LocalLeader>r  :<C-u>MagmaEvaluateVisual<CR>
 nnoremap <silent>       <LocalLeader>rc :MagmaReevaluateCell<CR>
 nnoremap <silent>       <LocalLeader>rd :MagmaDelete<CR>
 nnoremap <silent>       <LocalLeader>ro :MagmaShowOutput<CR>
+
+" Obsidian
+
+autocmd FileType markdown nnoremap <buffer> gd :ObsidianFollowLink<cr>
+nnoremap <leader>. :ObsidianSearch<cr>
+nnoremap <leader>n :ObsidianNew
+nnoremap <leader>[[ :ObsidianLink<cr>
+vnoremap <leader>, :ObsidianLink<cr>
+vnoremap <leader>n :ObsidianLinkNew<cr>
 
 let g:magma_automatically_open_output = v:false
