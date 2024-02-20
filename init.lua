@@ -49,12 +49,14 @@ Plug 'wellle/context.vim'
 Plug 'chrisbra/csv.vim'
 Plug('ojroques/vim-oscyank', { branch = 'main' })
 Plug 'rust-lang/rust.vim'
-Plug 'echasnovski/mini.nvim'
+Plug('echasnovski/mini.nvim', { branch = 'stable'})
 Plug('dccsillag/magma-nvim', { run = ':UpdateRemotePlugins' })
+Plug 'nvim-lua/plenary.nvim'
+Plug 'epwalsh/obsidian.nvim'
 vim.call('plug#end')
 
 vim.cmd([[
-	colorscheme habamax " quiet royal peachpuff
+	colorscheme ashes " quiet royal peachpuff
   highlight Folded          cterm=bold ctermfg=10 ctermbg=17 guibg=Gray guifg=White
   highlight Folded          cterm=bold ctermfg=10 ctermbg=17 guibg=Gray guifg=White
   highlight MiniFilesNormal guibg=#555555
@@ -64,9 +66,24 @@ vim.cmd([[
 	let g:context_enabled = 0
 ]])
 
+require('obsidian').setup({
+  workspaces = {
+    {
+      name = "adversaria",
+      path = "~/Documents/adversaria",
+    },
+  },
+  follow_url_func = function(url)
+    -- Open the URL in the default web browser.
+    -- vim.fn.jobstart({"open", url})  -- Mac OS
+    vim.fn.jobstart({"xdg-open", url})  -- linux
+  end,
+})
+
 require('neoclip').setup()
 
 require('mini.files').setup()
+require('mini.align').setup()
 
 require("transparent").setup({
   groups = { -- table: default groups
@@ -84,3 +101,5 @@ require('colorizer').setup()
 require("nvim-web-devicons").setup({
   default = true
 })
+
+vim.opt.conceallevel = 1
