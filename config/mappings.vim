@@ -125,6 +125,7 @@ nnoremap <silent> <CR> :noh<CR><CR>
 nnoremap <silent> <leader>z :GitGutterUndoHunk<cr>
 nnoremap <silent> <space>g :GitGutterNextHunk<cr>
 nnoremap <silent> <space>G :GitGutterPrevHunk<cr>
+nnoremap <silent> <space>gd :GitGutterDiffOrig<cr>
 " Conflicts
 nnoremap <silent> <space>n :ConflictMarkerNextHunk<cr>zz
 nnoremap <silent> <space>N :ConflictMarkerPrevHunk<cr>zz
@@ -136,12 +137,13 @@ nnoremap <silent> <leader>, :FZF<cr>
 nnoremap <silent> <leader>< :FZF ~<cr>
 nnoremap <silent> <leader>/ :FZF /<cr>
 nnoremap <silent> <leader>M :Maps<cr>
+" unmap the conflciting gitgutter ones
+nnoremap <silent> <leader>H :History:<cr>
 " nnoremap <silent> <leader>c :Commits<cr>
 vnoremap <silent> <leader>c :BCommits<cr>
 nnoremap <silent> <leader>o :BTags<CR>
 nnoremap <silent> <leader>O :Tags<CR>
 nnoremap <silent> // :BLines<cr>
-nnoremap <sllent> <leader>h :History<cr>
 nnoremap <silent> <leader>a :Buffers<CR>
 nnoremap <silent> <leader>A :Windows<CR>
 noremap <silent> <leader>ft :Filetypes<CR>
