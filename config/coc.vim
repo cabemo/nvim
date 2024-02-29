@@ -15,6 +15,7 @@ nnoremap <silent><nowait> <space>di :call CocAction('jumpDefinition', v:false)<c
 nnoremap <silent><nowait> <space>d :call CocAction('jumpDefinition', 'split')<cr>
 nnoremap <silent><nowait> <space>de :call CocAction('jumpDefinition', 'edit')<cr>
 nnoremap <silent><nowait> <space>i :call CocAction('jumpImplementation', v:false)<cr>
+nnoremap <silent><nowait> <space>a  :<C-u>CocList diagnostics<cr>
 nnoremap <silent><nowait> <space>r :call CocAction('jumpReferences')<cr>
 inoremap <silent><expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<CR>"
 inoremap <silent><expr> <c-space> coc#refresh()

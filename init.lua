@@ -29,9 +29,7 @@ Plug 'airblade/vim-rooter'
 Plug('neoclide/coc.nvim', { branch = 'release' })
 Plug 'airblade/vim-gitgutter'
 Plug 'https://github.com/rhysd/conflict-marker.vim'
-Plug 'gruvbox-community/gruvbox'
-Plug 'kyazdani42/nvim-tree.lua'
-Plug 'kyazdani42/nvim-web-devicons'
+Plug('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
 Plug 'nvim-tree/nvim-web-devicons'
 Plug 'tpope/vim-surround'
 Plug 'easymotion/vim-easymotion'
@@ -49,22 +47,52 @@ Plug 'wellle/context.vim'
 Plug 'chrisbra/csv.vim'
 Plug('ojroques/vim-oscyank', { branch = 'main' })
 Plug 'rust-lang/rust.vim'
-Plug('echasnovski/mini.nvim', { branch = 'stable'})
+Plug('echasnovski/mini.nvim', { branch = 'stable' })
 Plug('dccsillag/magma-nvim', { run = ':UpdateRemotePlugins' })
 Plug 'nvim-lua/plenary.nvim'
-Plug 'epwalsh/obsidian.nvim'
+Plug('epwalsh/obsidian.nvim', { tag = 'v2.9.0' })
+Plug 'morhetz/gruvbox'
+Plug 'rcarriga/nvim-notify'
+Plug('epwalsh/pomo.nvim', { tag = '*' })
+Plug 'mfussenegger/nvim-dap'
+Plug 'leoluz/nvim-dap-go'
+Plug 'theHamsta/nvim-dap-virtual-text'
 vim.call('plug#end')
 
 vim.cmd([[
-	colorscheme ashes " quiet royal peachpuff
+  autocmd vimenter * ++nested colorscheme gruvbox
   highlight Folded          cterm=bold ctermfg=10 ctermbg=17 guibg=Gray guifg=White
   highlight Folded          cterm=bold ctermfg=10 ctermbg=17 guibg=Gray guifg=White
   highlight MiniFilesNormal guibg=#555555
-	highlight LineNr          guifg=#CCCCCC
+	" highlight LineNr          guifg=#CCCCCC
   highlight Folded     cterm=bold ctermfg=10 ctermbg=17 guibg=Gray guifg=White
-	let g:airline_theme='base16'
-	let g:context_enabled = 0
+	let g:airline_theme='gruvbox'
+let g:context_enabled = 0
 ]])
+
+require('dap-go').setup()
+
+require('nvim-dap-virtual-text').setup({
+  enabled = true,
+  prefix = " ",
+  highlight = "Comment",
+  prefix_highlight = "Comment",
+})
+
+require('notify').setup({
+  stages = "fade",
+  timeout = 5000,
+  background_colour = "#000000",
+  text_colour = "#ffffff",
+  icons = {
+    ERROR = "",
+    WARN = "",
+    INFO = "",
+    DEBUG = "",
+    TRACE = "✎",
+  },
+})
+require('pomo').setup({})
 
 require('obsidian').setup({
   workspaces = {
@@ -76,7 +104,7 @@ require('obsidian').setup({
   follow_url_func = function(url)
     -- Open the URL in the default web browser.
     -- vim.fn.jobstart({"open", url})  -- Mac OS
-    vim.fn.jobstart({"xdg-open", url})  -- linux
+    vim.fn.jobstart({ "xdg-open", url }) -- linux
   end,
 })
 
@@ -101,5 +129,7 @@ require('colorizer').setup()
 require("nvim-web-devicons").setup({
   default = true
 })
+
+
 
 vim.opt.conceallevel = 1
