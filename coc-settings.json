@@ -1,4 +1,13 @@
 {
+  "go.goplsOptions": {
+    "analyses": {
+      "deprecated": false,
+      "nilness": true,
+      "shadow": true
+    }
+  },
+  "go.goplsUseDaemon": true,
+  "go.enable": true,
   "coc.preferences.formatOnSave": true,
   "coc.preferences.formatOnType": false,
   "python.linting.enabled": true,
@@ -7,26 +16,12 @@
     "140",
     "--experimental"
   ],
-  "languageserver": {
-    "lua": {
-      "command": "/usr/bin/lua-language-server",
-      "filetypes": [
-        "lua"
-      ],
-      "settings": {
-        "Lua": {
-          "workspace.library": {
-            "/usr/share/nvim/runtime/lua": true,
-            "/usr/share/nvim/runtime/lua/vim": true,
-            "/usr/share/nvim/runtime/lua/vim/lsp": true
-          },
-          "diagnostics": {
-            "globals": [
-              "vim"
-            ]
-          }
-        }
-      }
-    }
-  }
+  "Lua.diagnostics.globals": [
+    "vim"
+  ],
+  "Lua.workspace.library": [
+    "/usr/share/nvim/runtime/lua",
+    "/usr/share/nvim/runtime/lua/vim",
+    "/usr/share/nvim/runtime/lua/vim/lsp"
+  ]
 }
