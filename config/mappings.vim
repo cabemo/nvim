@@ -12,11 +12,6 @@ noremap L g_
 nnoremap <silent> gD :BufferLinePickClose<CR>
 nnoremap <silent> gb :BufferLinePick<CR>
 
-" Diff
-" Use Alt + h for :diffget
-map <silent> <A-j> ]czz
-map <silent> <A-k> [czz
-
 " Copy to clipboard
 nnoremap <silent> <space>y "+y
 vnoremap <silent> <space>y "+y
@@ -63,32 +58,31 @@ nnoremap <silent><nowait> <Esc> :lua MiniFiles.close()<CR>
 nnoremap <silent><nowait> <space>f :lua MiniFiles.open(vim.api.nvim_buf_get_name(0))<CR>
 " nnoremap <leader>l :NvimTreeFindFile<CR>
 
-if &diff
-  nnoremap <silent> <A-h> :diffget LO<cr>
-  nnoremap <silent> <A-l> :diffget RE<cr>
-  nnoremap k kzz
-  nnoremap j jzz
-  highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
-  highlight DiffDelete cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
-  highlight DiffChange cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
-  highlight DiffText   cterm=bold ctermfg=10 ctermbg=88 gui=none guifg=bg guibg=Red
-  nnoremap <silent> <leader>w :wqa<cr>
-endif
+function! Set_diff_mode_options()
+    if &diff
+    " Use Alt + h for :diffget
+      nnoremap <silent> <A-h> :diffget<cr>
+      nnoremap <silent> <A-l> :diffpush<cr>
+      map <silent> <A-j> ]czz
+      map <silent> <A-k> [czz
+    endif
+endfunction
+
+" When changing to diff mode while vim is open
+autocmd OptionSet diff call Set_diff_mode_options()
 
 "Search for selected text
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
 
 " DAP
-" nnoremap <silent> <space>dt :lua require('dap-go').debug_test()<CR>
-" nnoremap <silent> <space>c :lua require('dap').continue()<CR>
-" nnoremap <silent> <space>v :lua require('dap').step_over()<CR>
-" nnoremap <silent> <space>si :lua require('dap').step_into()<CR>
+nnoremap <silent> <space>dt :lua require('dap-go').debug_test()<CR>
+nnoremap <silent> <space>cn :lua require('dap').continue()<CR>
+nnoremap <silent> <space>o :lua require('dap').step_over()<CR>
+nnoremap <silent> <space>i :lua require('dap').step_into()<CR>
 " nnoremap <silent> <space>o :lua require('dap').step_out()<CR>
-" nnoremap <silent> <leader>b :lua require('dap').toggle_breakpoint()<CR>
-" nnoremap <silent> <space>dr :lua require('dap').repl.open()<CR>
+nnoremap <silent> <space>b :lua require('dap').toggle_breakpoint()<CR>
+nnoremap <silent> <space>dr :lua require('dap').repl.open()<CR>
 " nnoremap <silent> <space>du :lua require('dapui').toggle()<CR>
-"DAPUI
-" vnoremap <M-k> <Cmd>lua require("dapui").eval()<CR>
 
 
 " Utilities
@@ -139,7 +133,7 @@ nnoremap <silent> <leader>/ :FZF /<cr>
 nnoremap <silent> <leader>M :Maps<cr>
 " unmap the conflciting gitgutter ones
 nnoremap <silent> <leader>H :History:<cr>
-" nnoremap <silent> <leader>c :Commits<cr>
+nnoremap <silent> <leader>C :Commits<cr>
 vnoremap <silent> <leader>c :BCommits<cr>
 nnoremap <silent> <leader>o :BTags<CR>
 nnoremap <silent> <leader>O :Tags<CR>
@@ -156,6 +150,7 @@ nnoremap <silent> <leader>q :q<cr>
 nnoremap <silent> <leader>vs :vsplit<cr>
 nnoremap <silent> <leader>t :tabnew<cr>
 nnoremap <silent> <leader>x :term<cr>
+nnoremap <silent> <leader>X :split<cr><C-w>j<cr>:term<cr>
 "nnoremap <leader>, :ALENext<cr>
 "nnoremap <leader>. :ALEPrevious<cr>
 nnoremap <silent> <leader>e :qa<cr>

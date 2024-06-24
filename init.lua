@@ -18,6 +18,9 @@ vim.cmd([[
 
   " Restore cursor when exiting Vim
   autocmd VimLeave * set guicursor= | call chansend(v:stderr, "\x1b[ q")
+
+  " Organize golang imports
+  autocmd BufWritePre *.go :call CocAction('runCommand', 'editor.action.organizeImport')
 ]])
 
 -- Main configurations
@@ -69,8 +72,66 @@ vim.cmd([[
 	let g:airline_theme='gruvbox'
 let g:context_enabled = 0
 ]])
+-- Configure nvim-dap breakpoint icon
+vim.fn.sign_define('DapBreakpointCondition', { text = 'ꭗ', texthl = '' })
+-- vim.fn.sign_define('DapBreakpoint', { text = '', texthl = '' })
+vim.fn.sign_define('DapBreakpoint', { text = 'ꜿ', texthl = '' })
+vim.keymap.set('n', '<Space>cb',
+  function() require('dap').toggle_breakpoint(vim.fn.input('Condition: '), nil, 'Condition reached') end)
+vim.keymap.set('n', '<Space>dm',
+  function()
+    require('dap').run({
+      type = 'go',
+      name = 'Debug test',
+      request = 'launch',
+      mode = 'test',
+      program =
+      '${workspaceFolder}/x/mayachain',
+      buildFlags = { '-tags=mocknet' },
+      testFlags = { '-check.f', vim.fn.input('Test Name: ') },
+    })
+  end)
 
 require('dap-go').setup()
+
+local dap = require('dap')
+dap.set_log_level('TRACE')
+dap.adapters.delve = {
+  type = 'server',
+  port = '${port}',
+  executable = {
+    command = 'dlv',
+    args = { 'dap', '-l', '127.0.0.1:${port}' },
+  }
+}
+
+-- https://github.com/go-delve/delve/blob/master/Documentation/usage/dlv_dap.md
+dap.configurations.go = {
+  {
+    type = "delve",
+    name = "Debug",
+    request = "launch",
+    program = "${file}"
+  },
+  {
+    type = "delve",
+    name = "Debug test", -- configuration for debugging test files
+    request = "launch",
+    mode = "test",
+    program = "${file}",
+    buildFlags = { '-tags=mocknet', '-check.f TestSwap' },
+  },
+  -- works with go.mod packages and sub packages
+  {
+    type = "delve",
+    name = "Debug test (go.mod)",
+    request = "launch",
+    mode = "test",
+    program = "${workspaceFolder}/x/mayachain",
+    buildFlags = { '-tags=mocknet' },
+    testFlags = { ' -check.f TestSwap' },
+  }
+}
 
 require('nvim-dap-virtual-text').setup({
   enabled = true,
@@ -110,7 +171,14 @@ require('obsidian').setup({
 
 require('neoclip').setup()
 
-require('mini.files').setup()
+require('mini.files').setup({
+  mappings = {
+    go_in = 'L',
+    go_in_plus = '',
+    go_out = 'H',
+    go_out_plus = '',
+  }
+})
 require('mini.align').setup()
 
 require("transparent").setup({

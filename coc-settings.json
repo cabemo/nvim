@@ -1,4 +1,36 @@
 {
+  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
+  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
+  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyParenthesis": false,
+  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyParenthesis": false,
+  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": false,
+  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": false,
+  "typescript.format.insertSpaceBeforeAndAfterBinaryOperators": true,
+  "javascript.format.insertSpaceBeforeAndAfterBinaryOperators": true,
+  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingEmptyBraces": false,
+  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingEmptyBraces": false,
+  "prettier.enable": true,
+  "prettier.trailingComma": "es5",
+  "prettier.semi": true,
+  "languageserver": {
+    "go": {
+      "command": "gopls",
+      "rootPatterns": [
+        "go.work",
+        "go.mod",
+        ".vim/",
+        ".git/",
+        ".hg/"
+      ],
+      "filetypes": [
+        "go"
+      ],
+      "initializationOptions": {
+        "usePlaceholders": true
+      }
+    }
+  },
+  "go.trace.server": "verbose",
   "go.goplsOptions": {
     "analyses": {
       "deprecated": false,
@@ -6,15 +38,14 @@
       "shadow": true
     }
   },
-  "go.goplsUseDaemon": true,
-  "go.enable": true,
   "coc.preferences.formatOnSave": true,
   "coc.preferences.formatOnType": false,
   "python.linting.enabled": true,
+  "python.linting.pylintEnabled": false,
   "python.formatting.autopep8Args": [
     "--max-line-length",
     "140",
-    "--experimental"
+    "--ignore"
   ],
   "Lua.diagnostics.globals": [
     "vim"
@@ -23,5 +54,6 @@
     "/usr/share/nvim/runtime/lua",
     "/usr/share/nvim/runtime/lua/vim",
     "/usr/share/nvim/runtime/lua/vim/lsp"
-  ]
+  ],
+  "snippets.ultisnips.pythonPrompt": false
 }
